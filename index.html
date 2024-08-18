@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自由研究</title>
+</head>
+<body>
+    <h1>自由研究で作成したプログラム</h1>
+    <p></p>
+    <p></p>
+    <h3>・スクラッチ版</h3>
+    <iframe src="https://scratch.mit.edu/projects/1056793503/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <h3>・javascript(+html)版</h3>
+    <label>実行回数を入力:<input type="text" id="nameText" size="20"></label>
+    <button id="pasta">決定</button>
+    <p></p>
+    <div id = "pastaa"  break-word></div>
+</body>
+<p></p>
+<script>
+    const nameText = document.getElementById('nameText');
+    var pastaa = document.getElementById('pastaa');
+    const pasta = document.getElementById("pasta");
+
+    let kaisu = 0
+    // window.alert(pastah);;
+    let hantei = [2,3,5,7,11];
+    let goukei = [2,3,5,7,11];
+    pasta.addEventListener("click", () => {
+        const startTime = performance.now();
+        pastah = Number(nameText.value);
+
+        for(var i = 0;i < pastah; i ++){
+            kaisu=0;
+            for(var j = 0;j < hantei.length; j ++){
+                if (parseFloat(i % hantei[j]) != 0){
+                    if (i != 1){
+                        kaisu = kaisu + 1;
+                    }        //     // pastaa = document.getElementById('pastaa');    
+                //     // pastaa.textContent =`${pastaa}${i}`;
+                }
+                if (kaisu == hantei.length){
+                    goukei.push(i);
+                    goukei.push("\n");
+
+                    hantei.push(i);
+                }}};
+        // window.alert(goukei);
+        
+        pastaa.textContent =`実行結果:${goukei}`;
+        // aaa = 10 % 2;
+        // window.alert(aaa);
+        const endTime = performance.now();
+        let zatuyou = (endTime - startTime)/1000;
+        window.alert(`${zatuyou}秒`);
+    });
+</script>
+<p></p>
+    <h3>・Python版(※pyscript使用のため処理速度が違う可能性あり)</h3>
+    <button py-click="clicked()" id = "pas">実行回数を入力</button>
+
+<py-script>
+    def clicked():
+        import time
+        count = 0
+        hantei = [2,3,5,7,11]
+        kaisu = input("実行回数:")
+        # rist = []
+        # while True:
+        
+        start=time.time()
+        print(2)
+        print(3)
+        print(5)
+        print(7)
+        print(11)
+        
+        for i in range(int(kaisu)):
+            
+            count = count + 1
+            atari = 0
+            for i in range(len(hantei)):
+                if int(count % hantei[i]) != 0 :
+                    if count != 1:
+                        atari = atari + 1
+            if atari == len(hantei):
+                print(count)
+                hantei.append(count)
+                
+        
+        end = time.time()
+        araa = end-start
+        print(f"{araa}秒")
+
+</py-script>
+
+</html>
