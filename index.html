@@ -48,12 +48,13 @@
                     hantei.push(i);
                 }}};
         // window.alert(goukei);
+        let zatuyou = (endTime - startTime)/1000;
         goukei.push(`${zatuyou}秒`)
         pastaa.textContent =`実行結果:${goukei}`;
         // aaa = 10 % 2;
         // window.alert(aaa);
         const endTime = performance.now();
-        let zatuyou = (endTime - startTime)/1000;
+
         window.alert(`${zatuyou}秒`);
     });
 </script>
